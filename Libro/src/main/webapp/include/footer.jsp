@@ -11,9 +11,6 @@
       		<a href="https://es-es.facebook.com/" target="_blank"><i class="fab fa-facebook fa-3x"></i></a>
       		<a href="https://twitter.com/?lang=es" target="_blank"><i class="fab fa-twitter-square fa-3x"></i></a>
       	</span>
-      	<!-- <span class="text-center">  -->
-		<!-- Ultima visita: <fmt:formatDate value="${sessionScope.ultimaConexion}" pattern="dd-MM-yyyy HH:mm:ss" /> -->
-		<!-- </span> -->
         
       </div>
     </footer>

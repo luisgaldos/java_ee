@@ -1,7 +1,7 @@
-<header class="mb-3">
+<header>
 	<!-- HEADER NAVBAR -->
-	<nav class="navbar navbar-expand-md navbar-dark bg-primary fixed-top">
-		<a class="navbar-brand" href="inicio"><img class="logo" src="http://cdn.onlinewebfonts.com/svg/img_477677.png" alt = "Soy una tetera"></a>
+	<nav class="navbar navbar-expand-md  fixed-top">
+		<a class="navbar-brand" href="inicio"><img class="logo" src="https://image.flaticon.com/icons/png/512/207/207116.png" alt = "Logo de empresa"></a>
 	    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Menú de navegación">
 	    	<span class="navbar-toggler-icon"></span>
 	    </button>
@@ -16,8 +16,7 @@
 		          <li class="nav-item dropdown">
 		            <a class="nav-link dropdown-toggle text-white" href="https://example.com" id="backofficeMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Backoffice</a>
 		            <div class="dropdown-menu" aria-labelledby="backofficeMenu">
-		              <a class="dropdown-item" href="#">Añadir Productos</a>
-		              <a class="dropdown-item" href="backoffice/panel.jsp">Ver Productos</a>
+		              <a class="dropdown-item" href="#">Añadir Página</a>
 		            </div>
 		          </li>
 		        </c:if>

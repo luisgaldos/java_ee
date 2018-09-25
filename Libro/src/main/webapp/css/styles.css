@@ -6,10 +6,20 @@ html {
 }
 
 body {
-	/* Margen superior = Altura del menú (navbar) */
-	margin-top: 76px;
+	/* Margen superior = Altura del menu (navbar) */
+	margin-top: 100px;
 	/* Margen inferior =  Altura del footer */
 	margin-bottom: 60px;
+	min-height: 60vh;
+	background: #F2DE94;
+}
+
+header  {
+	max-height: 100px;
+}
+
+nav {
+	background: #D97B09 !important;
 }
 
 a:focus {
@@ -21,16 +31,15 @@ nav ul li a:hover {
 }
 
 .logo {
-	height: 50px;
-	width: 100px;
-	background-color: #FFF;
+	max-height: 75px;
+	max-width: 100px;
 }
 
 /* MODAL LOGIN FORM
 -------------------------------------------------- */
 
 .modal-login {
-	color: #007bff;
+	color: #8D1D05;
 	max-width: 350px;
 }
 
@@ -38,6 +47,7 @@ nav ul li a:hover {
 	padding: 20px;
 	border-radius: 5px;
 	border: none;
+	background: #F2DE94 !important;
 }
 
 .modal-login .modal-header {
@@ -87,7 +97,7 @@ nav ul li a:hover {
 	width: 95px;
 	height: 95px;
 	z-index: 9;
-	background: #808080;
+	background: #FFF;
 	padding: 15px;
 	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
 }
@@ -101,7 +111,7 @@ nav ul li a:hover {
 }
 
 .modal-login .btn {
-	color: #fff;
+	background: #D97B09 !important;
 	border-radius: 4px;
 	text-decoration: none;
 	transition: all 0.4s;
@@ -110,12 +120,12 @@ nav ul li a:hover {
 }
 
 .modal-login .btn:hover, .modal-login .btn:focus {
-	background: #45aba6;
+	background: #8D1D05 !important;
 	outline: none;
 }
 
 .modal-login .input-group .input-group-text i {
-	color: #007bff !important;
+	color: #8D1D05 !important;
 }
 
 
@@ -124,10 +134,190 @@ nav ul li a:hover {
 -------------------------------------------------- */
 
 .footer {
-	bottom: 0;
 	width: 100%;
-	height: 60px;
 	line-height: 60px; /* Vertically center the text there */
 	background-color: #f5f5f5;
+}
+
+/* CARD BOXES
+-------------------------------------------------- */
+.cardBox {
+  float: left;
+  font-size: 1em;
+  margin: 1% 0 0 1%;
+  perspective: 800px;
+  transition: all 0.3s ease 0s;
+ width: 23.7%; 
+}
+
+.cardBox:hover .card {
+  transform: rotateY( 180deg);
+}
+
+.card {
+  background: #8A1C01;
+  cursor: default;
+  height: 300px;
+  transform-style: preserve-3d;
+  transition: transform 0.4s ease 0s;
+  width: 100%;
+  -webkit-animation: giro 1s 1;
+  animation: giro 1s 1;
+}
+
+.card p {
+  margin-bottom: 1em;
+}
+
+.card .front,
+.card .back {
+  backface-visibility: hidden;
+  box-sizing: border-box;
+  color: white;
+  display: block;
+  font-size: 1.2em;
+  height: 100%;
+  padding: 0.8em;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+}
+
+.card .front strong {
+  background: #fff;
+  border-radius: 100%;
+  color: #222;
+  font-size: 1.5em;
+  line-height: 30px;
+  padding: 0 7px 4px 6px;
+}
+
+.card .back {
+  transform: rotateY( 180deg);
+}
+
+.card .back a {
+  padding: 0.3em 0.5em;
+  background: #333;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 1px;
+  font-size: 0.9em;
+  position: absolute;
+  bottom: 5px;
+  margin-left:auto;
+  margin-right:auto;
+  left:0;
+  right:0;
+  transition: all 0.2s ease 0s;
+}
+
+.card .back a:hover {
+  background: #fff;
+  color: #333;
+  text-shadow: 0 0 1px #333;
+}
+
+.cardBox:nth-child(n) .card .back {
+  background: cornflowerblue;
+}
+
+.cardBox:nth-child(2n) .card .back {
+  background: orange;
+}
+
+.cardBox:nth-child(3n) .card .back {
+  background: yellowgreen;
+}
+
+.cardBox:nth-child(4n) .card .back {
+  background: tomato;
+}
+
+.cardBox:nth-child(2n) .card {
+  -webkit-animation: giro 1.5s 1;
+  animation: giro 1.5s 1;
+}
+
+.cardBox:nth-child(3n) .card {
+  -webkit-animation: giro 2s 1;
+  animation: giro 2s 1;
+}
+
+.cardBox:nth-child(4n) .card {
+  -webkit-animation: giro 2.5s 1;
+  animation: giro 2.5s 1;
+}
+
+@-webkit-keyframes giro {
+  from {
+    transform: rotateY( 180deg);
+  }
+  to {
+    transform: rotateY( 0deg);
+  }
+}
+
+@keyframes giro {
+  from {
+    transform: rotateY( 180deg);
+  }
+  to {
+    transform: rotateY( 0deg);
+  }
+}
+
+/* ARTICULOS
+-------------------------------------------------- */
+
+.articulo-body {
+	font-size : 1.3em;
+	background: #FFF;
+	color: #000;
+	min-height: 50vh;
+	padding: 1.4em;
+}
+
+
+.articulo-nav a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1.6em;
+    
+}
+
+.articulo-nav .previous, .articulo-nav .next {
+    background-color: #8A1C01;
+    color: white;
+}
+
+.articulo-nav .previous:hover, .articulo-nav .next:hover {
+    background-color: #F2DB95;
+    color: black;
+}
+
+
+@media screen and (max-width: 768px) {
+  .cardBox {
+    margin-left: 2.8%;
+    margin-top: 3%;
+    width: 46%;
+  }
+  .card {
+    height: 285px;
+  }
+  .cardBox:last-child {
+    margin-bottom: 3%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .cardBox {
+    width: 94.5%;
+  }
+  .card {
+    height: 260px;
+  }
 }
 

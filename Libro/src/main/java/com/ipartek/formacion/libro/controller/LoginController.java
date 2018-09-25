@@ -25,7 +25,7 @@ public class LoginController extends HttpServlet {
 	private static final HashMap<String, Usuario> USUARIOS_AUTORIZADOS = simularUsuarios();
 
 	Alert alert;
-	Usuario u;
+	Usuario user;
 
 	private static HashMap<String, Usuario> simularUsuarios() {
 
@@ -58,8 +58,8 @@ public class LoginController extends HttpServlet {
 
 			if (validarUsuario(request)) { // Si el usuario es correcto
 
-				gestionarVariablesDeSesion(request, u);
-				gestionarCookiesDeUsuario(request, response, u);
+				gestionarVariablesDeSesion(request, user);
+				gestionarCookiesDeUsuario(request, response, user);
 
 			} else { // Usuario no correcto
 
@@ -90,7 +90,7 @@ public class LoginController extends HttpServlet {
 		String psw = request.getParameter("password");
 
 		// Comprobamos si es un usuario autorizado
-		Usuario user = USUARIOS_AUTORIZADOS.get(usuarioNombre);
+		user = USUARIOS_AUTORIZADOS.get(usuarioNombre);
 
 		if (user != null && user.getPass().equals(psw) && user.getNombre().equals(usuarioNombre)) { // Comprobar
 																									// credenciales

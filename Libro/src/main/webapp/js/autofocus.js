@@ -19,7 +19,7 @@ $(document).ready(function() {
 		}
 		
 		// Función JQuery para mantener el foco dentro del formulario modal
-		$.blockUI();
+		$(this).blockUI();
 
 	});
     

@@ -24,7 +24,8 @@
 					<div class="form-group">
 						<div class="input-group">
 							<label class="input-group-text" for="usuario" title="Usuario"><i
-								class="fas fa-user" aria-hidden></i></label> <input type="text"
+								class="fas fa-user" aria-hidden></i></label> 
+								<input type="text"
 								class="form-control" id="usuario" name="usuario"
 								placeholder="Introduce tu usuario" required pattern=".{3,30}"
 								value="${cookie.cNombre.value}">
@@ -35,7 +36,8 @@
 						<div class="input-group">
 							<label class="input-group-text" for="password" title="Contraseña">
 								<i class="fas fa-key"></i>
-							</label> <input type="password" class="form-control" id="password"
+							</label> 
+							<input type="password" class="form-control" id="password"
 								name="password" placeholder="Contraseña" required
 								pattern=".{4,30}">
 						</div>
@@ -50,7 +52,7 @@
 
 					<div class="form-group">
 						<button type="submit"
-							class="btn btn-primary btn-lg btn-block login-btn text-white">Acceder</button>
+							class="btn btn-lg btn-block login-btn text-white">Acceder</button>
 					</div>
 
 				</form>
