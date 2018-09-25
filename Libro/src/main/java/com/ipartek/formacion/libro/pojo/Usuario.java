@@ -1,4 +1,4 @@
-package com.ipartek.formacion.nombre_app.pojo;
+package com.ipartek.formacion.libro.pojo;
 
 public class Usuario {
 	

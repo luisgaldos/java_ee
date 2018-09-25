@@ -1,6 +1,7 @@
-package com.ipartek.formacion.nombre_app.controller;
+package com.ipartek.formacion.libro.controller;
 
 import java.io.IOException;
+import java.util.HashMap;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -10,18 +11,40 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.ipartek.formacion.nombre_app.pojo.Alert;
-import com.ipartek.formacion.nombre_app.pojo.Usuario;
+import com.ipartek.formacion.libro.pojo.Alert;
+import com.ipartek.formacion.libro.pojo.Usuario;
 
 /**
  * Servlet para gestionar el inicio de sesión del usuario.
  */
 @WebServlet("/login")
 public class LoginController extends HttpServlet {
+
 	private static final long serialVersionUID = 1L;
+
+	private static final HashMap<String, Usuario> USUARIOS_AUTORIZADOS = simularUsuarios();
 
 	Alert alert;
 	Usuario u;
+
+	private static HashMap<String, Usuario> simularUsuarios() {
+
+		HashMap<String, Usuario> tmp = new HashMap<String, Usuario>();
+
+		Usuario u = new Usuario("william", "shakespeare");
+		tmp.put(u.getNombre(), u);
+
+		u = new Usuario("cervantes", "saavedra");
+		tmp.put(u.getNombre(), u);
+
+		u = new Usuario("pablo", "neruda");
+		tmp.put(u.getNombre(), u);
+
+		u = new Usuario("paulo", "cohelo");
+		tmp.put(u.getNombre(), u);
+
+		return tmp;
+	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
@@ -31,13 +54,13 @@ public class LoginController extends HttpServlet {
 			throws ServletException, IOException {
 
 		try {
-			alert = new Alert();	// Creamos la alerta por defecto
-			
+			alert = new Alert(); // Creamos la alerta por defecto
+
 			if (validarUsuario(request)) { // Si el usuario es correcto
 
 				gestionarVariablesDeSesion(request, u);
 				gestionarCookiesDeUsuario(request, response, u);
-				
+
 			} else { // Usuario no correcto
 
 				alert.setTexto("Credenciales incorrectas");
@@ -53,8 +76,8 @@ public class LoginController extends HttpServlet {
 	}
 
 	/**
-	 * Procedimiento privado para comprobar si el usuario y la contraseña introducidos son
-	 * correctos.
+	 * Procedimiento privado para comprobar si el usuario y la contraseña
+	 * introducidos son correctos.
 	 * 
 	 * @param request, HttpServletRequest
 	 * @return true <=> usuario = admin & psw = admin
@@ -66,20 +89,23 @@ public class LoginController extends HttpServlet {
 		String usuarioNombre = request.getParameter("usuario");
 		String psw = request.getParameter("password");
 
-		if ("admin".equals(psw) && "admin".equals(usuarioNombre)) { // Comprobar usuario
+		// Comprobamos si es un usuario autorizado
+		Usuario user = USUARIOS_AUTORIZADOS.get(usuarioNombre);
+
+		if (user != null && user.getPass().equals(psw) && user.getNombre().equals(usuarioNombre)) { // Comprobar
+																									// credenciales
 
 			alert.setTexto("Bienvenido/a " + usuarioNombre);
 			alert.setTipo(Alert.SUCCESS);
 
-			u = new Usuario(usuarioNombre, psw); // Creamos el Usuario
 			correcto = true;
 		}
 		return correcto;
 	}
 
 	/**
-	 * Procedimiento privado para almacenar en una cookie el Usuario logueado si el campo
-	 * recordar está checked.
+	 * Procedimiento privado para almacenar en una cookie el Usuario logueado si el
+	 * campo recordar está checked.
 	 * 
 	 * @param request, HttpServletRequest
 	 * @param response,HttpServletRequest
@@ -111,7 +137,7 @@ public class LoginController extends HttpServlet {
 
 		HttpSession session = request.getSession();
 
-		session.setAttribute("usuario", u);	// Guardamos el Usuario en la sesión
+		session.setAttribute("usuario", u); // Guardamos el Usuario en la sesión
 		session.setMaxInactiveInterval(60 * 5); // 5 min
 	}
 

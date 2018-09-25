@@ -1,4 +1,4 @@
-package com.ipartek.formacion.nombre_app.listener;
+package com.ipartek.formacion.libro.listener;
 
 import java.util.HashMap;
 
@@ -7,7 +7,7 @@ import javax.servlet.annotation.WebListener;
 import javax.servlet.http.HttpSessionAttributeListener;
 import javax.servlet.http.HttpSessionBindingEvent;
 
-import com.ipartek.formacion.nombre_app.pojo.Usuario;
+import com.ipartek.formacion.libro.pojo.Usuario;
 
 /**
  * Application 'Lifecycle' Listener implementation class

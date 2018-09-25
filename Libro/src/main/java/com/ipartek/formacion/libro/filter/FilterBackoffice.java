@@ -1,4 +1,4 @@
-package com.ipartek.formacion.nombre_app.filter;
+package com.ipartek.formacion.libro.filter;
 
 import java.io.IOException;
 import java.util.Enumeration;
@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.ipartek.formacion.nombre_app.pojo.Usuario;
+import com.ipartek.formacion.libro.pojo.Usuario;
 
 
 /**

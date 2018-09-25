@@ -5,4 +5,4 @@
  * @author Curso
  *
  */
-package com.ipartek.formacion.nombre_app.model;
+package com.ipartek.formacion.libro.pojo;
