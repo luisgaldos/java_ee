@@ -4,7 +4,7 @@
 <!-- Navegador -->
 <%@ include file="/include/navbar.jsp" %>
 
-<main class="container mt-5" role="main">
+<main class="container m-5" role="main">
 	
 	<!-- Gestión de alertas -->
 	<c:if test="${alert != null }">
@@ -51,7 +51,7 @@
 </main>
 
 <!-- Pie de Página -->
-<div class="row align-center fixed-bottom">
+<div class="row align-center">
 	<div class="col">
 		
 		

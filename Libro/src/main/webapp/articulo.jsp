@@ -44,7 +44,7 @@
 </main>
 
 <!-- Pie de Página -->
-<div class="row align-center fixed-bottom">
+<div class="row align-center ">
 	<div class="col-md-12 color-primary">
 		<%@ include file="include/footer.jsp" %>
 	</div>
