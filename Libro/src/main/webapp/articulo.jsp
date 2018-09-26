@@ -20,9 +20,9 @@
 		</div>
 	</div>
 	
-	<div class="row align-center">
+	<div class="row align-center m-2">
         <div class="col">
-            <div class="articulo-header mb-2 text-center">
+            <div class="articulo-header text-center">
                 <h1><u>${pagActual.titulo}</u></h1>
                 <h2><i>${pagActual.autor }</i></h2>
             </div>
@@ -32,7 +32,7 @@
         </div>
     </div>
     
-    <div class="row align-center">
+    <div class="row align-center m-2">
     	<div class="col">
 	        <nav class="col articulo-nav text-center">
 	        	<a href="leer?op=prev&id=${pagActual.id}" class="previous">&#8249;</a>
